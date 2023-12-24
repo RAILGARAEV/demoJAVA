@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<?import com.example.database.MaskField?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="700.0" style="-fx-background-color: #FFDEAD;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.database.uchet.OknoController">
+   <children>
+      <TextField fx:id="textFieldFirstName" layoutX="73.0" layoutY="97.0" prefHeight="38.0" prefWidth="219.0" promptText="Фамилия">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <TextField fx:id="textFieldSecondName" layoutX="73.0" layoutY="162.0" prefHeight="38.0" prefWidth="219.0" promptText="Имя">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <TextField fx:id="textFieldLastName" layoutX="73.0" layoutY="225.0" prefHeight="38.0" prefWidth="219.0" promptText="Отчество">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <MaskField fx:id="textFieldPhone" mask="+7(DDD)-DDD-DD-DD" layoutX="73.0" layoutY="287.0" prefHeight="38.0" prefWidth="219.0" promptText="Номер телефона">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MaskField>
+
+<!--      <TextField fx:id="textFieldPhone" layoutX="73.0" layoutY="287.0" prefHeight="38.0" prefWidth="219.0" promptText="Номер телефона">-->
+<!--         <font>-->
+<!--            <Font size="15.0" />-->
+<!--         </font>-->
+<!--         <cursor>-->
+<!--            <Cursor fx:constant="HAND" />-->
+<!--         </cursor>-->
+<!--      </TextField>-->
+      <DatePicker fx:id="dataPicker" editable="false" layoutX="395.0" layoutY="97.0" prefHeight="38.0" prefWidth="219.0" promptText="Выберите дату">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></DatePicker>
+      <ComboBox fx:id="comboBoxTime" layoutX="395.0" layoutY="162.0" prefHeight="38.0" prefWidth="219.0" promptText="Время">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <ComboBox fx:id="comboBoxServices" layoutX="395.0" layoutY="222.0" prefHeight="38.0" prefWidth="219.0" promptText="Услуга">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <Label layoutX="310.0" layoutY="24.0" text="Запись" textFill="#170303">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="createTicket" layoutX="312.0" layoutY="347.0" mnemonicParsing="false" style="-fx-background-color: white;" text="Записаться">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ImageView fx:id="ImgBack" fitHeight="34.0" fitWidth="36.0" layoutX="652.0" layoutY="14.0" onMouseClicked="#backScreen" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/pngegg.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

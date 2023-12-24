@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="390.0" prefWidth="700.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.database.AuthController">
+   <children>
+      <TextField fx:id="textFieldLogin" layoutX="417.0" layoutY="119.0" prefHeight="38.0" prefWidth="219.0" promptText="Логин">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <Button fx:id="btnAuth" layoutX="447.0" layoutY="243.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #FFDEAD;" text="Войти">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="ErrorText" alignment="CENTER" layoutX="416.0" layoutY="293.0" prefHeight="16.0" prefWidth="226.0" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="467.0" layoutY="65.0" text="Авторизация">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="captchaField" layoutX="447.0" layoutY="350.0" prefHeight="25.0" prefWidth="160.0" visible="false">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
+      <Label fx:id="captchaLabel" alignment="CENTER" layoutX="471.0" layoutY="324.0" prefHeight="17.0" prefWidth="111.0" textAlignment="CENTER" />
+      <TextField fx:id="pfPassword" layoutX="417.0" layoutY="182.0" prefHeight="38.0" prefWidth="219.0" promptText="Пароль">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="textFieldPassword" layoutX="417.0" layoutY="182.0" prefHeight="38.0" prefWidth="219.0" promptText="Пароль">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </PasswordField>
+      <Pane prefHeight="401.0" prefWidth="350.0" style="-fx-background-color: #FFDEAD;">
+         <children>
+            <ImageView fitHeight="192.0" fitWidth="326.0" layoutX="12.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/6sxhzpc0hy0gy565tf9j55qfdlsp404d.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fx:id="nazad" fitHeight="38.0" fitWidth="39.0" layoutX="645.0" layoutY="14.0" onMouseClicked="#nazad" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/pngegg.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <CheckBox fx:id="passwordCheck" layoutX="607.0" layoutY="191.0" mnemonicParsing="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </CheckBox>
+   </children>
+</AnchorPane>
