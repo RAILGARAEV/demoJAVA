@@ -1,17 +1,23 @@
 package com.example.database;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
+
 import com.example.database.DbFunctions.DbFunctions;
+import com.example.database.DbFunctions.Request;
 import com.example.database.Models.Singleton;
+
+import com.example.database.Models.StageModel;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class ProfileController {
 
@@ -22,16 +28,10 @@ public class ProfileController {
     private URL location;
 
     @FXML
+    private Button requests;
+
+    @FXML
     private ImageView ImgBack;
-
-    @FXML
-    private Button btnDownload;
-
-    @FXML
-    private Button btnEmployees;
-
-    @FXML
-    private Button btnMySquad;
 
     @FXML
     private ImageView imgUser;
@@ -54,11 +54,11 @@ public class ProfileController {
     @FXML
     private AnchorPane rootPane;
 
-    DbFunctions dbFunctions = new DbFunctions();
+    private DbFunctions dbFunctions = new DbFunctions();
 
     @FXML
     void backScreen(MouseEvent event) {
-        new Loader().openNewScene(rootPane, "/com/example/database/come-screen.fxml", "Салон красоты Ирина");
+        new Loader().openNewScene(rootPane, "/com/example/database/come-screen.fxml", "Единый сервисный центр");
     }
 
     @FXML
@@ -71,6 +71,26 @@ public class ProfileController {
         labelPhone.setText(Singleton.getInstance().getPhone());
         imgUser.setImage(new Image(Singleton.getInstance().getImg()));
 
+//        requests.setOnAction(event -> {
+//            openUserRequestsScene();
+//        });
+//    }
+//
+//    private void openUserRequestsScene() {
+//        String username = Singleton.getInstance().getLogin();
+//        List<Request> userRequests = dbFunctions.getUserRequests(username);
+//
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/database/TicketProfile-check-screen.fxml"));
+//        try {
+//            AnchorPane anchorPane = loader.load();
+//            rootPane.getChildren().setAll(anchorPane);
+//            StageModel.getMyStage().setTitle("Заявки");
+//
+//            TicketProfileCheckActivity controller = loader.getController();
+//            controller.setUserRequests(userRequests);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 
 

@@ -83,7 +83,7 @@ public class RegistrationController {
 
     @FXML
     void backScreen() {
-        new Loader().openNewScene(rootPane, "/com/example/database/come-screen.fxml", "Салон красоты Ирина");
+        new Loader().openNewScene(rootPane, "/com/example/database/come-screen.fxml", "Единый сервисный центр");
     }
 
     @FXML

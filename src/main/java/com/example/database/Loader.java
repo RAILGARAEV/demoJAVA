@@ -22,7 +22,7 @@ public class Loader extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Loader.class.getResource("come-screen.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 700, 390);
         SceneModel.setMyScene(scene);
-        stage.setTitle("Салон красоты Ирина");
+        stage.setTitle("Единый сервисный центр");
         stage.setScene(scene);
         stage.show();
     }

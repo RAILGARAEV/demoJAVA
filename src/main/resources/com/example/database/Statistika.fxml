@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="390.0" prefWidth="700.0" style="-fx-background-color: #ffFFFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.database.Statistika">
+   <children>
+      <Label fx:id="ErrorText" alignment="CENTER" layoutX="416.0" layoutY="293.0" prefHeight="16.0" prefWidth="226.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="296.0" layoutY="18.0" text="Статистика" textFill="#a67120">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="nazad" fitHeight="38.0" fitWidth="39.0" layoutX="645.0" layoutY="14.0" onMouseClicked="#nazad" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/close.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="29.0" layoutY="60.0" prefHeight="30.0" prefWidth="349.0" text="Количество выполненных заявок:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="col" layoutX="380.0" layoutY="60.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <PieChart fx:id="piechart" layoutX="48.0" layoutY="173.0" prefHeight="211.0" prefWidth="604.0" />
+      <Label layoutX="161.0" layoutY="137.0" text="Статистика по типам неисправностей" textFill="#a67120">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="97.0" prefHeight="30.0" prefWidth="368.0" text="Среднее время выполнения заявок:">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="time" layoutX="404.0" layoutY="97.0" prefHeight="30.0" prefWidth="108.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

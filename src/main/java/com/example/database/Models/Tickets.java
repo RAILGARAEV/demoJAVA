@@ -3,18 +3,23 @@ package com.example.database.Models;
 
 public class Tickets {
 
-    String id, firstName, secondName, lastName, phone, date, time, services, status;
+    String id, date, equipment, tip, priority, ispolnitel, problem, status, remont, time, materials, colmaterials, cost, comment;
 
-    public Tickets(String id, String firstName, String secondName, String lastName, String phone, String date, String time, String services, String status) {
-        this.id = id;
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.lastName = lastName;
-        this.phone = phone;
-        this.date = date;
-        this.time = time;
-        this.services = services;
+    public Tickets(String id, String date, String equipment, String tip, String priority, String ispolnitel, String problem, String status, String remont, String time, String materials, String colmaterials, String cost, String comment) {
+        this.id = String.valueOf(id);
+        this.date = String.valueOf(date);
+        this.equipment = equipment;
+        this.tip = tip;
+        this.priority = priority;
+        this.ispolnitel = ispolnitel;
+        this.problem = problem;
         this.status = status;
+        this.remont = remont;
+        this.time = time;
+        this.materials = materials;
+        this.colmaterials = colmaterials;
+        this.cost = cost;
+        this.comment = comment;
     }
 
 
@@ -26,38 +31,6 @@ public class Tickets {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getSecondName() {
-        return secondName;
-    }
-
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
     public String getDate() {
         return date;
     }
@@ -66,20 +39,44 @@ public class Tickets {
         this.date = date;
     }
 
-    public String getTime() {
-        return time;
+    public String getEquipment() {
+        return equipment;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setEquipment(String equipment) {
+        this.equipment = equipment;
     }
 
-    public String getServices() {
-        return services;
+    public String getTip() {
+        return tip;
     }
 
-    public void setServices(String services) {
-        this.services = services;
+    public void setTip(String tip) {
+        this.tip = tip;
+    }
+
+    public String getPriority() {
+        return priority;
+    }
+
+    public void setPriority(String priority) {
+        this.priority = priority;
+    }
+
+    public String getIspolnitel() {
+        return ispolnitel;
+    }
+
+    public void setIspolnitel(String ispolnitel) {
+        this.ispolnitel = ispolnitel;
+    }
+
+    public String getProblem() {
+        return problem;
+    }
+
+    public void setProblem(String problem) {
+        this.problem = problem;
     }
 
     public String getStatus() {
@@ -89,4 +86,49 @@ public class Tickets {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public String getRemont() {
+        return remont;
+    }
+
+    public void setRemont(String remont) {
+        this.remont = remont;
+    }
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getMaterials() {
+        return materials;
+    }
+
+    public void setMaterials(String materials) {
+        this.materials = materials;
+    }
+    public String getColMaterials() {
+        return colmaterials;
+    }
+
+    public void setColMaterials(String colmaterials) {
+        this.colmaterials = colmaterials;
+    }
+    public String getCost() {
+        return cost;
+    }
+
+    public void setCost(String cost) {
+        this.cost = cost;
+    }
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
 }

@@ -8,70 +8,67 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <?import com.example.database.MaskField?>
 
-<AnchorPane fx:id="rootPane" prefHeight="390.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.database.RegistrationController">
+<AnchorPane fx:id="rootPane" prefHeight="390.0" prefWidth="700.0" style="-fx-background-color: #e0ffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.database.RegistrationController">
    <children>
-      <Pane layoutX="4.0" layoutY="2.0" prefHeight="401.0" prefWidth="700.0" style="-fx-background-color: White;">
-         <children>
-            <ImageView fitHeight="400.0" fitWidth="705.0" layoutX="-6.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../img/im.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="44.0" fitWidth="55.0" layoutX="642.0" layoutY="8.0" onMouseClicked="#backScreen" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../img/pngegg.png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <Label fx:id="ErrorText" alignment="CENTER" layoutX="24.0" layoutY="355.0" prefHeight="16.0" prefWidth="226.0" textFill="RED">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Button fx:id="btnRegistration" layoutX="120.0" layoutY="301.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: white;" text="Зарегистрироваться" textFill="BLACK">
-               <font>
-                  <Font size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Label alignment="BASELINE_CENTER" layoutX="241.0" layoutY="15.0" prefHeight="30.0" prefWidth="133.0" text="Регистрация" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <TextField fx:id="textFieldLastName" layoutX="200.0" layoutY="153.0" prefHeight="38.0" prefWidth="219.0" promptText="Отчество">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </TextField>
-            <TextField fx:id="textFieldFirstName" layoutX="200.0" layoutY="58.0" prefHeight="38.0" prefWidth="219.0" promptText="Имя">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </TextField>
-            <TextField fx:id="textFieldSecondName" layoutX="200.0" layoutY="105.0" prefHeight="38.0" prefWidth="219.0" promptText="Фамилия">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </TextField>
+      <ImageView fitHeight="390.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/image.jpg" />
+         </image>
+      </ImageView>
+      <Label alignment="BASELINE_CENTER" layoutX="241.0" layoutY="15.0" prefHeight="30.0" prefWidth="133.0" text="Регистрация" textAlignment="CENTER" textFill="BLUE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="44.0" fitWidth="55.0" layoutX="642.0" layoutY="8.0" onMouseClicked="#backScreen" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/pngegg.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label fx:id="ErrorText" alignment="CENTER" layoutX="24.0" layoutY="355.0" prefHeight="16.0" prefWidth="226.0" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnRegistration" layoutX="120.0" layoutY="301.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: BLUE;" text="Зарегистрироваться" textFill="e0ffff">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="textFieldLastName" layoutX="200.0" layoutY="153.0" prefHeight="38.0" prefWidth="219.0" promptText="Отчество">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <TextField fx:id="textFieldSecondName" layoutX="200.0" layoutY="105.0" prefHeight="38.0" prefWidth="219.0" promptText="Имя">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <TextField fx:id="textFieldFirstName" layoutX="200.0" layoutY="58.0" prefHeight="38.0" prefWidth="219.0" promptText="Фамилия">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
             <MaskField fx:id="textFieldPass" layoutX="200.0" layoutY="201.0" mask="DD DD DDDDDD" prefHeight="38.0" prefWidth="219.0" promptText="Адрес">
                <font>
                   <Font size="15.0" />
@@ -104,29 +101,30 @@
 <!--                  <Cursor fx:constant="HAND" />-->
 <!--               </cursor>-->
 <!--            </TextField>-->
-            <DatePicker fx:id="datePicker" layoutX="200.0" layoutY="250.0" prefHeight="38.0" prefWidth="219.0" promptText="Дата рождения">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></DatePicker>
-            <ImageView fx:id="imgreg" fitHeight="160.0" fitWidth="170.0" layoutX="8.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="btnimg" layoutX="310.0" layoutY="301.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: white;" text="Выбрать фото" textFill="BLACK">
-               <font>
-                  <Font size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Label layoutX="126.0" layoutY="208.0" prefHeight="20.0" prefWidth="60.0" text="Паспорт:">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <TextField fx:id="captchaField" layoutX="270.0" layoutY="355.0" prefHeight="25.0" prefWidth="160.0" visible="false">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></TextField>
-            <Label fx:id="captchaLabel" layoutX="475.0" layoutY="358.0" prefHeight="17.0" prefWidth="111.0" textFill="BLACK" />
-         </children>
-      </Pane>
+      <DatePicker fx:id="datePicker" layoutX="200.0" layoutY="250.0" prefHeight="38.0" prefWidth="219.0" promptText="Дата рождения">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </DatePicker>
+      <ImageView fx:id="imgreg" fitHeight="160.0" fitWidth="170.0" layoutX="8.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btnimg" layoutX="310.0" layoutY="301.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: BLUE;" text="Выбрать фото" textFill="e0ffff">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="126.0" layoutY="208.0" prefHeight="20.0" prefWidth="60.0" text="Паспорт:" textFill="BLUE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="captchaField" layoutX="270.0" layoutY="355.0" prefHeight="25.0" prefWidth="160.0" visible="false">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <Label fx:id="captchaLabel" layoutX="475.0" layoutY="358.0" prefHeight="17.0" prefWidth="111.0" textFill="BLACK" />
    </children>
 </AnchorPane>

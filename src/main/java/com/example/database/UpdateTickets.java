@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import com.example.database.DbFunctions.DbFunctions;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -33,59 +35,75 @@ public class UpdateTickets {
     private AnchorPane rootPane;
 
     @FXML
-    private DatePicker tdata;
+    private DatePicker tdate;
 
     @FXML
-    private TextField tfirst;
+    private ComboBox<String> tequipment;
 
     @FXML
-    private TextField tlast;
+    private ComboBox<String> ttip;
 
     @FXML
-    private TextField tphone;
+    private ComboBox<String> tmaterials;
 
     @FXML
-    private TextField tsecond;
+    private TextField tproblem;
 
     @FXML
-    private ComboBox<String> tservices;
+    private TextField ttime;
+
+    @FXML
+    private TextField tcomment;
+
+    @FXML
+    private TextField tcolmaterials;
+
+    @FXML
+    private TextField tcost;
+
+    @FXML
+    private ComboBox<String> tispolnitel;
+
+    @FXML
+    private ComboBox<String> tremont;
+
+    @FXML
+    private ComboBox<String> tpriority;
 
     @FXML
     private ComboBox<String> tstatus;
 
-    @FXML
-    private ComboBox<String> ttime;
 
     @FXML
     private ImageView nazad;
 
-    String idTicket = "";
+    String idRequest = "";
 
     private final DbFunctions dbFunctions = new DbFunctions();
 
     @FXML
     void initialize() {
-        tservices.getItems().add("Массаж");
-        tservices.getItems().add("Маникюр");
-        tservices.getItems().add("Наращивание ресниц");
-        tservices.getItems().add("Коррекция бровей");
-        tservices.getItems().add("Увеличение губ");
-        tservices.getItems().add("Окрашивание");
-        tservices.getItems().add("Стрижка");
 
-        ttime.getItems().add("11:00");
-        ttime.getItems().add("12:00");
-        ttime.getItems().add("13:00");
-        ttime.getItems().add("14:00");
-        ttime.getItems().add("15:00");
-        ttime.getItems().add("16:00");
-        ttime.getItems().add("17:00");
-        ttime.getItems().add("18:00");
+        ObservableList<String> status = dbFunctions.getAllStatus();
+        tstatus.setItems(status);
 
-        tstatus.getItems().add("Отказ");
-        tstatus.getItems().add("Принят");
-        tstatus.getItems().add("Ожидание");
-        tstatus.getItems().add("Выполнено");
+        ObservableList<String> prioritet = dbFunctions.getAllPrioritet();
+        tpriority.setItems(prioritet);
+
+        ObservableList<String> ispolniteli = FXCollections.observableArrayList(dbFunctions.getIspolniteli());
+        tispolnitel.setItems(ispolniteli);
+
+        ObservableList<String> equipments = FXCollections.observableArrayList(dbFunctions.getEquipments());
+        tequipment.setItems(equipments);
+
+        ObservableList<String> tipni = FXCollections.observableArrayList(dbFunctions.getTip());
+        ttip.setItems(tipni);
+
+        ObservableList<String> tcomm = FXCollections.observableArrayList(dbFunctions.getComment());
+        tremont.setItems(tcomm);
+
+        ObservableList<String> tmat = FXCollections.observableArrayList(dbFunctions.getMaterials());
+        tmaterials.setItems(tmat);
 
         bref.setOnAction(e -> {
 
@@ -97,24 +115,29 @@ public class UpdateTickets {
 
     }
 
-    public void setData(String fn, String sn, String ln, String ph, String dt, String vr, String ser, String stat, String id) {
-        tfirst.setText(fn);
-        tsecond.setText(sn);
-        tlast.setText(ln);
-        tphone.setText(ph);
-        tdata.setValue(LocalDate.parse(dt));
-        ttime.setValue(vr);
-        tservices.setValue(ser);
+    public void setData(String dt, String eq, String tp, String prior, String is, String pr, String stat, String rm, String tm, String mt, String cmat, String ct, String cm, String id) {
+        tdate.setValue(LocalDate.parse(dt));
+        tequipment.setValue(eq);
+        ttip.setValue(tp);
+        tpriority.setValue(prior);
+        tispolnitel.setValue(is);
+        tproblem.setText(pr);
         tstatus.setValue(stat);
-        idTicket = id;
+        tremont.setValue(rm);
+        ttime.setText(tm);
+        tmaterials.setValue(mt);
+        tcolmaterials.setText(cmat);
+        tcost.setText(ct);
+        tcomment.setText(cm);
+        idRequest = id;
     }
 
 
     private void deleteDataTicket() {
-        if (idTicket.equals("")) {
+        if (idRequest.equals("")) {
 //            ErrorLabel.setText("Повторите попытку позже");
         } else {
-            dbFunctions.deleteDataTicket(idTicket);
+            dbFunctions.deleteDataTicket(idRequest);
             bdel.getScene().getWindow().hide();
 
         }
@@ -123,22 +146,25 @@ public class UpdateTickets {
 
     private void updateDataTicket() {
 
-        String firstname = tfirst.getText();
-        String secondname = tsecond.getText();
-        String lastname = tlast.getText();
-        String phone = tphone.getText();
-        String date = tdata.getValue().toString();
-        String time = ttime.getValue();
-        String services = tservices.getValue();
+        String date = tdate.getValue().toString();
+        String equipment = tequipment.getValue();
+        String tip = ttip.getValue();
+        String priority = tpriority.getValue();
+        String ispolnitel = tispolnitel.getValue();
+        String problem = tproblem.getText();
         String status = tstatus.getValue();
-
-        if (firstname.isEmpty() || secondname.isEmpty() || lastname.isEmpty() || phone.isEmpty() || date.isEmpty() || time.isEmpty() || services.isEmpty() || status.isEmpty()) {
-//            ErrorLabel.setText("Логин пустой");
+        String remont = tremont.getValue();
+        String time = ttime.getText();
+        String materials = tmaterials.getValue();
+        String colmaterials = tcolmaterials.getText();
+        String cost = tcost.getText();
+        String comment = tcomment.getText();
+        if (date.isEmpty() || equipment.isEmpty() || tip.isEmpty() || priority.isEmpty() || ispolnitel.isEmpty() ||
+                problem.isEmpty() || status.isEmpty() || remont.isEmpty() || time.isEmpty() || materials.isEmpty() || colmaterials.isEmpty() || cost.isEmpty() || comment.isEmpty()) {
         } else {
 
-            dbFunctions.updateDataTickets(firstname, secondname, lastname, phone, date, time, services, status, idTicket);
+            dbFunctions.updateDataTickets(date, equipment, tip, priority, ispolnitel, problem, status, remont, time, materials, colmaterials, cost, comment, idRequest);
             bref.getScene().getWindow().hide();
-
 
         }
 

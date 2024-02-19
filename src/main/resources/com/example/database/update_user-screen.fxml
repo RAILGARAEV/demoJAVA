@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="390.0" prefWidth="500.0" style="-fx-background-color: #FFDEAD;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.database.UpdateUserController">
+<AnchorPane prefHeight="390.0" prefWidth="500.0" style="-fx-background-color: #e0ffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.database.UpdateUserController">
    <children>
-      <Label layoutX="94.0" layoutY="48.0" text="Редактирование пользователя">
+      <Label layoutX="94.0" layoutY="48.0" text="Редактирование пользователя" textFill="BLUE">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>

@@ -1,6 +1,7 @@
 package com.example.database;
 
 import com.example.database.DbFunctions.DbFunctions;
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -45,9 +46,8 @@ public class UpdateUserController {
         });
         buttonDelete.setOnAction(e -> deleteDataUser());
 
-        roleTextField.getItems().add("Администратор");
-        roleTextField.getItems().add("Клиент");
-        roleTextField.getItems().add("Пользователь");
+        ObservableList<String> roles = dbFunctions.getAllRoles();
+        roleTextField.setItems(roles);
 
         passwordCheck.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override

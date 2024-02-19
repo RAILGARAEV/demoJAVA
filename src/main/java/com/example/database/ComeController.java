@@ -13,16 +13,7 @@ public class ComeController {
     private Button btnReg;
 
     @FXML
-    private Button btnR;
-
-    @FXML
     private AnchorPane rootPane;
-
-    @FXML
-    private Button btnRegistration;
-
-    @FXML
-    private Button btnGr;
 
 
     @FXML
@@ -33,17 +24,6 @@ public class ComeController {
 
         btnAuth.setOnAction(e -> {
             new Loader().openNewScene(rootPane, "/com/example/database/auth-screen.fxml", "Авторизация");
-        });
-
-        btnRegistration.setOnAction(e -> {
-            new Loader().openNewScene(rootPane, "/com/example/database/registration-for-employees.fxml", "Услуги");
-        });
-
-        btnR.setOnAction(e -> {
-            new Loader().openNewScene(rootPane, "/com/example/database/raspol-screen.fxml", "Местоположение салона");
-        });
-        btnGr.setOnAction(e -> {
-            new Loader().openNewScene(rootPane, "/com/example/database/grafic-screen.fxml", "График работы");
         });
 
     }

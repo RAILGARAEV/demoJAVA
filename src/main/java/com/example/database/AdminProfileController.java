@@ -24,13 +24,16 @@ public class AdminProfileController {
     private ImageView ImgBack;
 
     @FXML
-    private Button btnDownload;
+    private Button zapic;
 
     @FXML
-    private Button btnEmployees;
+    private Button equipment;
 
     @FXML
-    private Button btnMySquad;
+    private Button material;
+
+    @FXML
+    private Button btnstat;
 
     @FXML
     private ImageView imgUser;
@@ -57,16 +60,13 @@ public class AdminProfileController {
     private AnchorPane rootPane;
 
     @FXML
-    private Button btndeat;
-
-    @FXML
     private Button btnTck;
 
     DbFunctions dbFunctions = new DbFunctions();
 
     @FXML
     void backScreen(MouseEvent event) {
-        new Loader().openNewScene(rootPane, "/com/example/database/come-screen.fxml", "Салон красоты Ирина");
+        new Loader().openNewScene(rootPane, "/com/example/database/come-screen.fxml", "Единый сервисный центр");
     }
 
     @FXML
@@ -80,16 +80,28 @@ public class AdminProfileController {
         imgUser.setImage(new Image(Singleton.getInstance().getImg()));
 
         btnBid.setOnAction(event -> {
-            new Loader().openNewScene(rootPane, "/com/example/database/main-screen.fxml", "Аккаунты");
-        });
-        btndeat.setOnAction(event -> {
-            new Loader().openNewScene(rootPane, "/com/example/database/uchet-screen.fxml", "Учет деятельности");
+            new Loader().openNewScene(rootPane, "/com/example/database/main-screen.fxml", "Пользователи");
         });
 
         btnTck.setOnAction(event -> {
-            new Loader().openNewScene(rootPane, "/com/example/database/Ticket-check-screen.fxml", "Записи");
+            new Loader().openNewScene(rootPane, "/com/example/database/Ticket-check-screen.fxml", "Заявки");
         });
 
+        zapic.setOnAction(event -> {
+            new Loader().openNewScene(rootPane, "/com/example/database/okno-screen.fxml", "Заявка");
+        });
+
+        btnstat.setOnAction(event -> {
+            new Loader().openNewScene(rootPane, "/com/example/database/Statistika.fxml", "Статистика");
+        });
+
+        equipment.setOnAction(event -> {
+            new Loader().openNewScene(rootPane, "/com/example/database/equipment.fxml", "Добавить оборудование");
+        });
+
+        material.setOnAction(event -> {
+            new Loader().openNewScene(rootPane, "/com/example/database/material.fxml", "Добавить материал");
+        });
 
     }
 }

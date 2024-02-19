@@ -73,7 +73,7 @@ public class MainController {
         tableColumnStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
         tableView.setItems(dbFunctions.getAllUsers());
 
-        if (Variables.ROLE_USER.equals("Администратор")) {
+        if (Variables.ROLE_USER.equals("Сотрудник")) {
             tableView.setOnMouseClicked(e -> {
                 click++;
                 if (click % 2 == 0) {

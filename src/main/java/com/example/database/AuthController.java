@@ -50,7 +50,7 @@ public class AuthController {
 
     @FXML
     void nazad() {
-        new Loader().openNewScene(rootPane, "/com/example/database/come-screen.fxml", "Салон красоты Ирина");
+        new Loader().openNewScene(rootPane, "/com/example/database/come-screen.fxml", "Единый сервисный центр");
     }
 
     @FXML
@@ -94,20 +94,14 @@ public class AuthController {
             captcha();
         }
         else {
-            if (Variables.ROLE_USER.equals("Клиент")) {
-                Singleton.getInstance().setLogin(textFieldLogin.getText());
-                ErrorText.setText("");
-                new Loader().openNewScene(rootPane, "/com/example/database/Client-screen.fxml", "Профиль");
-                dbFunctions.update_status("Онлайн", login);
-
-            } else if (Variables.ROLE_USER.equals("Пользователь")) {
+            } if (Variables.ROLE_USER.equals("Исполнитель")) {
                 Singleton.getInstance().setLogin(textFieldLogin.getText());
                 ErrorText.setText("");
                 new Loader().openNewScene(rootPane, "/com/example/database/Profile-screen.fxml", "Профиль");
                 dbFunctions.update_status("Онлайн", login);
 
 
-            } else if (Variables.ROLE_USER.equals("Администратор")) {
+            } else if (Variables.ROLE_USER.equals("Сотрудник")) {
                 Singleton.getInstance().setLogin(textFieldLogin.getText());
                 ErrorText.setText("");
                 new Loader().openNewScene(rootPane, "/com/example/database/AdminProfile-screen.fxml", "Профиль");
@@ -115,8 +109,6 @@ public class AuthController {
 
             }
         }
-
-    }
 
     private void captcha() {
         captchaField.setVisible(true);

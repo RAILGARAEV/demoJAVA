@@ -11,71 +11,101 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootPane" prefHeight="390.0" prefWidth="500.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.database.UpdateTickets">
+<AnchorPane fx:id="rootPane" prefHeight="390.0" prefWidth="500.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.database.UpdateTickets">
    <children>
-      <TextField fx:id="tfirst" layoutX="162.0" layoutY="52.0" prefHeight="25.0" prefWidth="174.0" promptText="Имя">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></TextField>
-      <TextField fx:id="tsecond" layoutX="162.0" layoutY="95.0" prefHeight="25.0" prefWidth="174.0" promptText="Фамилия">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></TextField>
-      <TextField fx:id="tlast" layoutX="162.0" layoutY="138.0" prefHeight="25.0" prefWidth="174.0" promptText="Отчество">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></TextField>
-      <TextField fx:id="tphone" layoutX="162.0" layoutY="177.0" prefHeight="25.0" prefWidth="174.0" promptText="Номер">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></TextField>
-      <DatePicker fx:id="tdata" layoutX="162.0" layoutY="217.0" promptText="Дата">
+      <DatePicker fx:id="tdate" layoutX="47.0" layoutY="58.0" promptText="Дата">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></DatePicker>
-      <ComboBox fx:id="ttime" layoutX="162.0" layoutY="257.0" prefHeight="25.0" prefWidth="174.0" promptText="Время">
+      <ComboBox fx:id="tstatus" layoutX="46.0" layoutY="312.0" prefHeight="25.0" prefWidth="174.0" promptText="Статус">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></ComboBox>
-      <ComboBox fx:id="tservices" layoutX="162.0" layoutY="291.0" prefHeight="25.0" prefWidth="174.0" promptText="Услуга">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></ComboBox>
-      <ComboBox fx:id="tstatus" layoutX="162.0" layoutY="324.0" prefHeight="25.0" prefWidth="174.0" promptText="Статус">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></ComboBox>
-      <Label layoutX="228.0" layoutY="21.0" text="Заявка">
+      <Label layoutX="165.0" layoutY="9.0" text="Редактирование заявки" textFill="#a67120">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="bref" layoutX="158.0" layoutY="361.0" mnemonicParsing="false" style="-fx-background-color: #FFDEAD;" text="Обновить">
+      <Button fx:id="bref" layoutX="158.0" layoutY="349.0" mnemonicParsing="false" style="-fx-background-color: #a67120;" text="Обновить" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button fx:id="bdel" layoutX="267.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #FFDEAD;" text="Удалить">
+      <Button fx:id="bdel" layoutX="273.0" layoutY="349.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="71.0" style="-fx-background-color: #a67120;" text="Удалить" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <ImageView fx:id="closeImage" fitHeight="21.0" fitWidth="17.0" layoutX="469.0" layoutY="13.0" onMouseClicked="#Exit" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="nazad" fitHeight="38.0" fitWidth="39.0" layoutX="456.0" layoutY="4.0" onMouseClicked="#Exit" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../img/exit.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="nazad" fitHeight="38.0" fitWidth="39.0" layoutX="441.0" layoutY="13.0" onMouseClicked="#Exit" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../img/pngegg.png" />
+            <Image url="@../../../img/close.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
+      <TextField fx:id="tproblem" layoutX="47.0" layoutY="270.0" prefHeight="25.0" prefWidth="174.0" promptText="Проблема">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <ComboBox fx:id="tpriority" layoutX="46.0" layoutY="186.0" prefHeight="25.0" prefWidth="174.0" promptText="Приоритет">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <ComboBox fx:id="tispolnitel" layoutX="47.0" layoutY="229.0" prefHeight="25.0" prefWidth="174.0" promptText="Исполнитель">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <ComboBox fx:id="ttip" layoutX="47.0" layoutY="144.0" prefHeight="25.0" prefWidth="174.0" promptText="Тип неисправности">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <ComboBox fx:id="tequipment" layoutX="47.0" layoutY="101.0" prefHeight="25.0" prefWidth="174.0" promptText="Оборудование">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <TextField fx:id="tcost" layoutX="277.0" layoutY="210.0" prefHeight="25.0" prefWidth="174.0" promptText="Стоимость">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <TextField fx:id="ttime" layoutX="277.0" layoutY="56.0" prefHeight="25.0" prefWidth="174.0" promptText="Время выполнения">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <ComboBox fx:id="tremont" layoutX="276.0" layoutY="250.0" prefHeight="25.0" prefWidth="174.0" promptText="Ремонт">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <Label layoutX="308.0" layoutY="36.0" text="Время выполнения" />
+      <Label layoutX="330.0" layoutY="84.0" text="Материалы" />
+      <Label layoutX="333.0" layoutY="189.0" text="Стоимость" />
+      <TextField fx:id="tcolmaterials" layoutX="277.0" layoutY="156.0" prefHeight="25.0" prefWidth="174.0" promptText="Количество материалов">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <Label layoutX="293.0" layoutY="136.0" text="Количество материалов" />
+      <ComboBox fx:id="tmaterials" accessibleRole="CHECK_BOX" layoutX="277.0" layoutY="105.0" prefHeight="25.0" prefWidth="174.0" promptText="Материалы">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <TextField fx:id="tcomment" layoutX="276.0" layoutY="289.0" prefHeight="48.0" prefWidth="174.0" promptText="Комментарий">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
    </children>
 </AnchorPane>

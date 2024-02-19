@@ -9,12 +9,16 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootPane" prefHeight="390.0" prefWidth="700.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.database.AuthController">
+<AnchorPane fx:id="rootPane" prefHeight="390.0" prefWidth="700.0" style="-fx-background-color: #ffFFFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.database.AuthController">
    <children>
-      <TextField fx:id="textFieldLogin" layoutX="417.0" layoutY="119.0" prefHeight="38.0" prefWidth="219.0" promptText="Логин">
+      <ImageView fitHeight="390.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../img/image.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="textFieldLogin" layoutX="230.0" layoutY="156.0" prefHeight="38.0" prefWidth="219.0" promptText="Логин">
          <font>
             <Font size="15.0" />
          </font>
@@ -22,7 +26,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </TextField>
-      <Button fx:id="btnAuth" layoutX="447.0" layoutY="243.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #FFDEAD;" text="Войти">
+      <Button fx:id="btnAuth" layoutX="260.0" layoutY="283.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-border-color: #a67120; -fx-border-radius: 10;" text="Войти">
          <font>
             <Font size="14.0" />
          </font>
@@ -35,7 +39,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="467.0" layoutY="65.0" text="Авторизация">
+      <Label layoutX="275.0" layoutY="83.0" text="Авторизация" textFill="#a67120">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -45,12 +49,12 @@
             <Cursor fx:constant="HAND" />
          </cursor></TextField>
       <Label fx:id="captchaLabel" alignment="CENTER" layoutX="471.0" layoutY="324.0" prefHeight="17.0" prefWidth="111.0" textAlignment="CENTER" />
-      <TextField fx:id="pfPassword" layoutX="417.0" layoutY="182.0" prefHeight="38.0" prefWidth="219.0" promptText="Пароль">
+      <TextField fx:id="pfPassword" layoutX="230.0" layoutY="219.0" prefHeight="38.0" prefWidth="219.0" promptText="Пароль">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="textFieldPassword" layoutX="417.0" layoutY="182.0" prefHeight="38.0" prefWidth="219.0" promptText="Пароль">
+      <PasswordField fx:id="textFieldPassword" layoutX="230.0" layoutY="219.0" prefHeight="38.0" prefWidth="219.0" promptText="Пароль">
          <font>
             <Font size="15.0" />
          </font>
@@ -58,16 +62,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </PasswordField>
-      <Pane prefHeight="401.0" prefWidth="350.0" style="-fx-background-color: #FFDEAD;">
-         <children>
-            <ImageView fitHeight="192.0" fitWidth="326.0" layoutX="12.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../img/6sxhzpc0hy0gy565tf9j55qfdlsp404d.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <ImageView fx:id="nazad" fitHeight="38.0" fitWidth="39.0" layoutX="645.0" layoutY="14.0" onMouseClicked="#nazad" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="nazad" fitHeight="38.0" fitWidth="39.0" layoutX="645.0" layoutY="14.0" onMouseClicked="#nazad" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../../../img/pngegg.png" />
          </image>
@@ -75,7 +70,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <CheckBox fx:id="passwordCheck" layoutX="607.0" layoutY="191.0" mnemonicParsing="false">
+      <CheckBox fx:id="passwordCheck" layoutX="420.0" layoutY="228.0" mnemonicParsing="false" visible="false">
          <font>
             <Font size="15.0" />
          </font>
@@ -83,5 +78,15 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </CheckBox>
+      <ImageView fitHeight="69.0" fitWidth="219.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../img/logotip.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="223.0" fitWidth="241.0" layoutX="101.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../img/comp.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
